@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-gold to-gold-light bg-clip-text text-transparent;
+  }
+  
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f4cf67;
+}
+
+::selection {
+  background: rgba(212, 175, 55, 0.3);
+  color: #ffffff;
+}
+
+/* React Datepicker Custom Styles */
+.react-datepicker {
+  @apply bg-dark-lighter border-white/10 font-sans;
+}
+
+.react-datepicker__header {
+  @apply bg-dark border-white/10;
+}
+
+.react-datepicker__current-month,
+.react-datepicker__day-name {
+  @apply text-gold;
+}
+
+.react-datepicker__day {
+  @apply text-white hover:bg-gold hover:text-dark;
+}
+
+.react-datepicker__day--selected {
+  @apply bg-gold text-dark;
+}
+
+.react-datepicker__day--disabled {
+  @apply text-white/30;
+}
