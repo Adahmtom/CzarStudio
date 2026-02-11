@@ -3,6 +3,10 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  transpilePackages: ['@phosphor-icons/react'],
+  experimental: {
+    optimizePackageImports: ['@phosphor-icons/react'],
+  },
   images: {
     unoptimized: true,  // ← Add this line
     remotePatterns: [
