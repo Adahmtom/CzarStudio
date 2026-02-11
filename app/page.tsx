@@ -34,28 +34,28 @@ const services = [
     icon: WeddingIcon,
     title: 'Weddings',
     description: 'Capture every magical moment of your special day with cinematic elegance',
-    image: '/images/Wedding.jpg',
+    image: 'https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/portfolio#weddings'
   },
   {
     icon: BirthdayIcon,
     title: 'Birthday Celebrations',
     description: 'Preserve the joy and excitement of milestone birthday parties',
-    image: '/images/Birthday.jpg',
+    image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/portfolio#birthdays'
   },
   {
     icon: RetirementIcon,
     title: 'Retirement Parties',
     description: 'Honor career achievements with professional event coverage',
-    image: '/images/Retirement.jpg',
+    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/portfolio#retirements'
   },
   {
     icon: SocialIcon,
     title: 'Social Events',
     description: 'From galas to gatherings, we capture the atmosphere perfectly',
-    image: '/images/Social_Events.jpg',
+    image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
     href: '/portfolio#social'
   },
 ]
