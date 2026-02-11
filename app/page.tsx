@@ -2,7 +2,9 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ChevronDown, Camera, Video, Users } from 'lucide-react'
+import { TrophyIcon, FilmSlateIcon, UserCircleIcon } from '@phosphor-icons/react'
 
 // Custom SVG Icons for Services
 const WeddingIcon = () => (
@@ -29,33 +31,41 @@ const SocialIcon = () => (
   </svg>
 )
 
+// Direct Pexels image URLs for Our Services (stable, no query params)
+const PEXELS = {
+  wedding: 'https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg',
+  birthday: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg',
+  retirement: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg',
+  social: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg',
+}
+
 const services = [
   {
     icon: WeddingIcon,
     title: 'Weddings',
     description: 'Capture every magical moment of your special day with cinematic elegance',
-    image: 'https://images.pexels.com/photos/2788792/pexels-photo-2788792.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: PEXELS.wedding,
     href: '/portfolio#weddings'
   },
   {
     icon: BirthdayIcon,
     title: 'Birthday Celebrations',
     description: 'Preserve the joy and excitement of milestone birthday parties',
-    image: 'https://images.pexels.com/photos/1444442/pexels-photo-1444442.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: PEXELS.birthday,
     href: '/portfolio#birthdays'
   },
   {
     icon: RetirementIcon,
     title: 'Retirement Parties',
     description: 'Honor career achievements with professional event coverage',
-    image: 'https://images.pexels.com/photos/3184418/pexels-photo-3184418.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: PEXELS.retirement,
     href: '/portfolio#retirements'
   },
   {
     icon: SocialIcon,
     title: 'Social Events',
     description: 'From galas to gatherings, we capture the atmosphere perfectly',
-    image: 'https://images.pexels.com/photos/1105666/pexels-photo-1105666.jpeg?auto=compress&cs=tinysrgb&w=800',
+    image: PEXELS.social,
     href: '/portfolio#social'
   },
 ]
@@ -64,17 +74,17 @@ const whyFeatures = [
   {
     title: 'Professional Excellence',
     description: 'Award-winning photographers and videographers with years of experience capturing special moments',
-    icon: Camera,
+    icon: TrophyIcon,
   },
   {
     title: 'Cinematic Quality',
     description: 'State-of-the-art equipment and techniques to deliver stunning, high-resolution memories',
-    icon: Video,
+    icon: FilmSlateIcon,
   },
   {
     title: 'Personalized Service',
     description: 'Customized packages tailored to your event and budget with dedicated support',
-    icon: Users,
+    icon: UserCircleIcon,
   },
 ]
 
@@ -179,10 +189,12 @@ export default function Home() {
                   <Link href={service.href}>
                     <div className="group relative overflow-hidden border border-white/10 hover:border-gold/50 transition-all duration-500">
                       <div className="aspect-[4/3] relative overflow-hidden">
-                        <img
+                        <Image
                           src={service.image}
                           alt={service.title}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          fill
+                          sizes="(max-width: 768px) 100vw, 50vw"
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent" />
                       </div>
@@ -249,7 +261,7 @@ export default function Home() {
                   className="text-center"
                 >
                   <div className="w-16 h-16 rounded-full bg-gold/10 border border-gold/30 flex items-center justify-center mx-auto mb-6">
-                    <Icon className="text-gold" size={32} />
+                    <Icon className="text-gold" size={32} weight="duotone" />
                   </div>
                   <h3 className="font-serif text-2xl mb-4 text-gold">{feature.title}</h3>
                   <p className="text-white/60 leading-relaxed">{feature.description}</p>
